@@ -1,14 +1,21 @@
+let display = document.getElementById("display");
+
 function adicionar(valor) {
-  document.getElementById('display').value += valor;
+  display.value += valor;
 }
+
 function limpar() {
-  document.getElementById('display').value = '';
+  display.value = "";
 }
+
+function apagar() {
+  display.value = display.value.slice(0, -1);
+}
+
 function calcular() {
   try {
-    let resultado = eval(document.getElementById('display').value);
-    document.getElementById('display').value = resultado;
+    display.value = eval(display.value);
   } catch {
-    document.getElementById('display').value = 'Erro';
+    display.value = "Erro";
   }
-}
+} 
